@@ -21,7 +21,8 @@ body{
   font-family: 'Lexend', sans-serif;
   font-size:16px;
   line-height:24px; 
-  background-color:#202020;
+  /* background-color: #202020; */
+  background-color:#1d0c64;
 }
 .container{
   width: 1170px;
@@ -44,7 +45,8 @@ body{
   left: 0;
   width: 100%;
   z-index: 99;
-  background-color: #202020;
+  /* background-color: #202020; */
+  background-color:#1d0c64;
   padding: 5px;
 }
 
@@ -64,7 +66,8 @@ body{
 }
 
 .logo .fa-bolt {
-  color: #fed700;
+  /* color: #fed700; */
+  color: #f5a818;
   font-size: 19.5px;
   position: absolute; 
   top: 60%;
@@ -95,10 +98,12 @@ body{
   display: block;
 }
 .header ul li a.active{
-  color: #fed700;
+  /* color: #fed700; */
+  color: #f5a818;
 } 
 .header ul li a:hover{
-  color:#fed700;
+  /* color:#fed700; */
+  color: #f5a818;
 }
 .header .menu_icon{
   color:#fff;
@@ -126,7 +131,7 @@ body{
   height:  300px;
   border-radius: 50%;
   overflow: hidden;
-  border: 15px solid #444444;
+  border: 15px solid #100541;
   box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5)
 }
 profile-photo .img{
@@ -147,7 +152,8 @@ profile-photo .img{
   font-size: 14px;
 }
 .profile-text h1{
-  color: #fed700;
+  /* color: #fed700; */
+  color: #f5a818;
   font-size: 3rem; 
 }
 .profile-text p{
@@ -160,7 +166,8 @@ profile-photo .img{
   transition: 0.5s;
 }
 .profile-text .social i:hover{
-  color:#fed700;
+  /* color:#fed700; */
+  color: #f5a818;
   transform: rotate(360deg);
 }
 
@@ -170,7 +177,8 @@ profile-photo .img{
 
 .about-area{
   padding-top: 130px;
-  background-color: #202020;
+  /* background-color: #202020; */
+  background-color:#1d0c64;
 }
 .about{
   display: flex;
@@ -182,7 +190,8 @@ profile-photo .img{
   flex-basis: 60%;
 }
 .about-content h4{
-  color: #fed700;
+  /* color: #fed700; */
+  color: #f5a818;
   font-size: 40px;
   line-height: 70px;
   text-transform: capitalize;
@@ -222,7 +231,7 @@ profile-photo .img{
 .btn-group .btn{
   border-color: #d5d5d5;
   color: #fff;
-  background-color: #333;
+  background-color: #100541;
   padding:12px 25px;
   margin: 5px 0;
   margin-right: 7px;
@@ -231,7 +240,8 @@ profile-photo .img{
   box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
 }
 .btn.active{
-  border-color: #fed700;
+  /* border-color: #fed700; */
+  color: #f5a818;
 }
 
 
@@ -245,7 +255,8 @@ profile-photo .img{
 }
 
 .education-content .title{
-  color: #fed700;
+  /* color: #fed700; */
+  color: #f5a818;
 }
 .education-content .row .education,
 .education-content .row .internship
@@ -259,6 +270,7 @@ profile-photo .img{
   font-size:24px;
   margin-bottom: 30px;
   font-weight: 700;
+  color: #f5a818;
 }
 .education-content .row.timeline-box{
   flex:0 0 100%;
@@ -292,7 +304,8 @@ profile-photo .img{
   height: 100%;
   left: 7px;
   top: 0;
-  background-color: #fed700;  
+  /* background-color: #fed700;   */
+  background-color: #f5a818;
 }
 .education-content .row .circle-dot{
   position: absolute;
@@ -301,7 +314,8 @@ profile-photo .img{
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background-color: #e5e5e5;
+  /* background-color: #e5e5e5; */
+  background-color: #f5a818;
 }
 .education-content .row .timeline-title  {
   font-weight: 700;
@@ -335,7 +349,8 @@ profile-photo .img{
   text-transform: uppercase;
   font-size: 40px;
   line-height: 40px;
-  color: #fed700;
+  /* color: #fed700; */
+  color: #f5a818;
   margin-bottom: 20px;
 }
 
@@ -351,7 +366,8 @@ profile-photo .img{
 }
 
 .project {
-  background-color: #1a1a1a; /* Optional for better look */
+  /* background-color: #1a1a1a;  */
+  background-color:#17094d;
   color: #e5e5e5;
   border: 2px solid #e5e5e5;
   border-radius: 10px;
@@ -366,7 +382,8 @@ profile-photo .img{
 }
 
 .project i {
-  background-color: #fed700;
+  /* background-color: #fed700; */
+  background-color: #f5a818;;
   width: 60px;
   height: 60px;
   color: #333;
@@ -388,13 +405,13 @@ profile-photo .img{
 }
 
 .project:hover {
-  border-color: #fed700;
+  border-color: #f5a818;;
 }
 
 .project button {
   width: 120px;
   height: 40px;
-  background-color: #fed700;
+  background-color: #f5a818;;
   color: #201f1f; /* Changed from #1a1a1a to white */
   font-size: 16px;
   font-weight: 600;
@@ -408,7 +425,7 @@ profile-photo .img{
 }
 
 .project button:hover {
-  background-color: #e6c200;
+  background-color: #f5a818;;
   color: #ffffff;
   transform: scale(1.05);
 }
@@ -429,7 +446,7 @@ profile-photo .img{
 .contact-content .contact-title h4{
   font-size: 40px;
   text-transform: capitalize;
-  color: #fed700;
+  color: #f5a818;;
   padding-bottom: 10px;
 }
 .contact-content .contact-title p{
@@ -448,7 +465,7 @@ profile-photo .img{
 
 .contact .submit{
   width: auto;
-  background-color: #fed700;
+  background-color: #f5a818;
   padding: 10px 40px;
   font-weight:bold ;
   font-size: 18px;
@@ -456,6 +473,7 @@ profile-photo .img{
 .contact .submit:hover{
   transform: scale(1.1);
   cursor: pointer;
+  color: #ffffff;
 }
 #msg{
   color: #fff;
