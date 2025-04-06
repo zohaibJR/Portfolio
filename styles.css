@@ -22,7 +22,7 @@ body{
   font-size:16px;
   line-height:24px; 
   /* background-color: #202020; */
-  background-color:#1d0c64;
+  background-color:#09122C;
 }
 .container{
   width: 1170px;
@@ -46,7 +46,7 @@ body{
   width: 100%;
   z-index: 99;
   /* background-color: #202020; */
-  background-color:#1d0c64;
+  background-color:#09122C;
   padding: 5px;
 }
 
@@ -67,7 +67,8 @@ body{
 
 .logo .fa-bolt {
   /* color: #fed700; */
-  color: #f5a818;
+  /* color: #F5B400; */
+  color: #F5B400;
   font-size: 19.5px;
   position: absolute; 
   top: 60%;
@@ -99,11 +100,11 @@ body{
 }
 .header ul li a.active{
   /* color: #fed700; */
-  color: #f5a818;
+  color: #F5B400;
 } 
 .header ul li a:hover{
   /* color:#fed700; */
-  color: #f5a818;
+  color: #F5B400;
 }
 .header .menu_icon{
   color:#fff;
@@ -153,7 +154,7 @@ profile-photo .img{
 }
 .profile-text h1{
   /* color: #fed700; */
-  color: #f5a818;
+  color: #F5B400;
   font-size: 3rem; 
 }
 .profile-text p{
@@ -167,7 +168,7 @@ profile-photo .img{
 }
 .profile-text .social i:hover{
   /* color:#fed700; */
-  color: #f5a818;
+  color: #00f55e;
   transform: rotate(360deg);
 }
 
@@ -178,7 +179,7 @@ profile-photo .img{
 .about-area{
   padding-top: 130px;
   /* background-color: #202020; */
-  background-color:#1d0c64;
+  background-color:#09122C;
 }
 .about{
   display: flex;
@@ -191,7 +192,7 @@ profile-photo .img{
 }
 .about-content h4{
   /* color: #fed700; */
-  color: #f5a818;
+  color: #F5B400;
   font-size: 40px;
   line-height: 70px;
   text-transform: capitalize;
@@ -241,7 +242,7 @@ profile-photo .img{
 }
 .btn.active{
   /* border-color: #fed700; */
-  color: #f5a818;
+  color: #F5B400;
 }
 
 
@@ -256,7 +257,7 @@ profile-photo .img{
 
 .education-content .title{
   /* color: #fed700; */
-  color: #f5a818;
+  color: #F5B400;
 }
 .education-content .row .education,
 .education-content .row .internship
@@ -270,7 +271,7 @@ profile-photo .img{
   font-size:24px;
   margin-bottom: 30px;
   font-weight: 700;
-  color: #f5a818;
+  color: #F5B400;
 }
 .education-content .row.timeline-box{
   flex:0 0 100%;
@@ -305,7 +306,7 @@ profile-photo .img{
   left: 7px;
   top: 0;
   /* background-color: #fed700;   */
-  background-color: #f5a818;
+  background-color: #F5B400;
 }
 .education-content .row .circle-dot{
   position: absolute;
@@ -315,7 +316,7 @@ profile-photo .img{
   width: 15px;
   border-radius: 50%;
   /* background-color: #e5e5e5; */
-  background-color: #f5a818;
+  background-color: #F5B400;
 }
 .education-content .row .timeline-title  {
   font-weight: 700;
@@ -347,7 +348,7 @@ profile-photo .img{
   text-transform: uppercase;
   font-size: 40px;
   line-height: 40px;
-  color: #f5a818;
+  color: #F5B400;
   margin-bottom: 20px;
 }
 
@@ -365,9 +366,9 @@ profile-photo .img{
 }
 
 .skill {
-  background-color: #17094d;
+  background-color: #10213A;
   color: #e5e5e5;
-  border: 2px solid #e5e5e5;
+  border: 2px solid #ffffff;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
@@ -393,13 +394,13 @@ profile-photo .img{
 }
 
 .skill:hover {
-  border-color: #f5a818;
+  border-color: #F5B400;
 }
 
 .skill button {
   width: 120px;
   height: 40px;
-  background-color: #f5a818;
+  background-color: #F5B400;
   color: #201f1f;
   font-size: 16px;
   font-weight: 600;
@@ -413,8 +414,8 @@ profile-photo .img{
 }
 
 .skill button:hover {
-  background-color: #f5a818;
-  color: #ffffff;
+  background-color: #F5B400;
+  color: #F5B400;
   transform: scale(1.05);
 }
 
@@ -439,7 +440,7 @@ profile-photo .img{
   font-size: 40px;
   line-height: 40px;
   /* color: #fed700; */
-  color: #f5a818;
+  color: #F5B400;
   margin-bottom: 20px;
 }
 
@@ -456,8 +457,8 @@ profile-photo .img{
 
 .project {
   /* background-color: #1a1a1a;  */
-  background-color:#17094d;
-  color: #e5e5e5;
+  background-color:#10213A;
+  color: #ffffff;
   border: 2px solid #e5e5e5;
   border-radius: 10px;
   flex-basis: 32%;
@@ -472,7 +473,7 @@ profile-photo .img{
 
 .project i {
   /* background-color: #fed700; */
-  background-color: #f5a818;;
+  background-color: #F5B400;;
   width: 60px;
   height: 60px;
   color: #333;
@@ -494,13 +495,13 @@ profile-photo .img{
 }
 
 .project:hover {
-  border-color: #f5a818;;
+  border-color: #F5B400;;
 }
 
 .project button {
   width: 120px;
   height: 40px;
-  background-color: #f5a818;;
+  background-color: #F5B400;;
   color: #201f1f; /* Changed from #1a1a1a to white */
   font-size: 16px;
   font-weight: 600;
@@ -514,7 +515,7 @@ profile-photo .img{
 }
 
 .project button:hover {
-  background-color: #f5a818;;
+  background-color: #FFD75E;;
   color: #ffffff;
   transform: scale(1.05);
 }
@@ -535,7 +536,7 @@ profile-photo .img{
 .contact-content .contact-title h4{
   font-size: 40px;
   text-transform: capitalize;
-  color: #f5a818;;
+  color: #F5B400;;
   padding-bottom: 10px;
 }
 .contact-content .contact-title p{
@@ -554,7 +555,7 @@ profile-photo .img{
 
 .contact .submit{
   width: auto;
-  background-color: #f5a818;
+  background-color: #F5B400;
   padding: 10px 40px;
   font-weight:bold ;
   font-size: 18px;
@@ -562,7 +563,7 @@ profile-photo .img{
 .contact .submit:hover{
   transform: scale(1.1);
   cursor: pointer;
-  color: #ffffff;
+  color: #F5B400;
 }
 #msg{
   color: #fff;
