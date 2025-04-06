@@ -563,7 +563,7 @@ profile-photo .img{
 .contact .submit:hover{
   transform: scale(1.1);
   cursor: pointer;
-  color: #F5B400;
+  color: #ffffff;
 }
 #msg{
   color: #fff;
