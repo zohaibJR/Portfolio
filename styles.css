@@ -333,6 +333,95 @@ profile-photo .img{
   text-align: justify;
 }
 
+/*---------------------------Skills---------------------------*/
+.skill-content {
+  padding: 90px 0;
+}
+
+.skill-title {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.skill-title h4 {
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 40px;
+  color: #f5a818;
+  margin-bottom: 20px;
+}
+
+.skill-title p {
+  color: #e5e5e5;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four items per row */
+  gap: 20px;
+  justify-items: center;
+  max-width: 1200px; /* Limit the width */
+  margin: 0 auto; /* Center the grid */
+}
+
+.skill {
+  background-color: #17094d;
+  color: #e5e5e5;
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  aspect-ratio: 1; /* Ensures the box is square */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.skill img {
+  width: 80px; /* Adjusted to fit well in the square box */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.skill h3 {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.skill:hover {
+  border-color: #f5a818;
+}
+
+.skill button {
+  width: 120px;
+  height: 40px;
+  background-color: #f5a818;
+  color: #201f1f;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.skill button:hover {
+  background-color: #f5a818;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.skill button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
 
 /*---------------------------Projects---------------------------*/
