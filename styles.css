@@ -1029,20 +1029,32 @@ textarea {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
 }
 
 .project-card {
   background: var(--bg3);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 30px 28px;
+  border-radius: 10px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
   transition: var(--transition);
+  min-height: 320px;
+}
+
+.project-card:hover .proj-folder {
+  transform: scale(1.08);
+}
+
+.proj-folder {
+  font-size: 28px;
+  color: var(--accent);
+  transition: transform var(--transition);
 }
 
 .project-card:hover {
@@ -1067,11 +1079,6 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-}
-
-.proj-folder {
-  font-size: 28px;
-  color: var(--accent);
 }
 
 .proj-links {
@@ -1104,14 +1111,14 @@ textarea {
 
 .project-card h3 {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--white);
 }
 
 .project-card p {
   color: var(--text2);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.75;
 }
 
