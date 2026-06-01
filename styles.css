@@ -226,10 +226,18 @@ textarea {
 }
 
 .logo {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #64ffda; /* optional */
 }
 
 .logo-bracket {
