@@ -1164,20 +1164,26 @@ button {
   text-transform: uppercase;
 }
 
+/* =========================
+   PROJECTS GRID
+   Enlarged to 2 columns so landscape screenshots
+   have room to display at a readable size.
+========================= */
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
   align-items: stretch;
 }
 
 .project-card {
-  min-height: 334px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 20px;
-  padding: 24px 20px;
+  padding: 22px 22px 26px;
   transform-style: preserve-3d;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background var(--transition);
 }
@@ -1185,7 +1191,7 @@ button {
 .project-card:hover {
   border-color: rgba(97, 182, 255, 0.45);
   box-shadow: var(--shadow), 10px 10px 0 rgba(97, 182, 255, 0.08);
-  transform: translateY(-8px) rotateX(3deg);
+  transform: translateY(-8px) rotateX(2deg);
 }
 
 .featured-proj {
@@ -1264,6 +1270,95 @@ button {
   color: var(--text2);
   font-size: 13px;
   line-height: 1.75;
+}
+
+/* =========================
+   PROJECT IMAGE
+   Uses aspect-ratio (not a fixed px height) so
+   landscape screenshots scale cleanly at any
+   card width instead of being cropped tightly.
+========================= */
+
+.proj-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.proj-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Dark gradient over image */
+.proj-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 10, 20, 0.65),
+    rgba(5, 10, 20, 0.05)
+  );
+  pointer-events: none;
+}
+
+/* Hover zoom */
+.project-card:hover .proj-image img {
+  transform: scale(1.07);
+  filter: brightness(0.75);
+}
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.proj-image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  pointer-events: none;
+}
+
+.proj-image-overlay span {
+  padding: 8px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 7px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.project-card:hover .proj-image-overlay {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contact-grid {
@@ -1461,10 +1556,6 @@ button {
   .nav-link {
     padding-inline: 8px;
     font-size: 12px;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1664,6 +1755,260 @@ button {
 
   .ci-arrow {
     display: none;
+  }
+}
+
+/* =========================
+   PROJECT GALLERY BADGE
+   Small photo-count pill shown on cards that
+   have more than one image, injected by JS.
+========================= */
+
+.proj-image {
+  cursor: pointer;
+}
+
+.proj-image-count {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(5, 10, 20, 0.6);
+  backdrop-filter: blur(6px);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.proj-image-count i {
+  color: var(--accent2);
+  font-size: 11px;
+}
+
+/* =========================
+   LIGHTBOX GALLERY
+========================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.28s var(--ease), visibility 0s linear 0.28s;
+}
+
+.lightbox.open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.28s var(--ease), visibility 0s linear 0s;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 9, 14, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(92vw, 980px);
+  max-height: 90vh;
+  padding: 18px;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  background: linear-gradient(150deg, rgba(17, 39, 54, 0.96), rgba(8, 19, 28, 0.97));
+  box-shadow: var(--shadow);
+  transform: scale(0.96) translateY(10px);
+  transition: transform 0.3s var(--ease);
+}
+
+.lightbox.open .lightbox-inner {
+  transform: scale(1) translateY(0);
+}
+
+.lightbox-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.lightbox-title {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.lightbox-close {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text2);
+  cursor: pointer;
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.lightbox-close:hover {
+  border-color: rgba(255, 95, 87, 0.5);
+  background: rgba(255, 95, 87, 0.12);
+  color: var(--danger);
+}
+
+.lightbox-stage {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.lightbox-img.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border2);
+  border-radius: 50%;
+  background: rgba(5, 10, 20, 0.55);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 15px;
+  transform: translateY(-50%);
+  transition: var(--transition);
+}
+
+.lightbox-nav:hover {
+  border-color: rgba(69, 240, 182, 0.55);
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.lightbox-nav:disabled {
+  cursor: default;
+  opacity: 0.28;
+}
+
+.lightbox-nav:disabled:hover {
+  border-color: var(--border2);
+  background: rgba(5, 10, 20, 0.55);
+  color: var(--text);
+}
+
+.lightbox-prev { left: 14px; }
+.lightbox-next { right: 14px; }
+
+.lightbox-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.lightbox-counter {
+  color: var(--text3);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.lightbox-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lightbox-dot {
+  width: 8px;
+  height: 8px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.lightbox-dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+@media (max-width: 720px) {
+  .lightbox-inner {
+    width: 96vw;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .lightbox-img {
+    max-height: 58vh;
+  }
+
+  .lightbox-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .lightbox-prev { left: 6px; }
+  .lightbox-next { right: 6px; }
+
+  .lightbox-title {
+    font-size: 14px;
   }
 }
 
